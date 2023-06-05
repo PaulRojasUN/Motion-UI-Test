@@ -1,0 +1,23 @@
+@import '../../node_modules/motion-ui/motion-ui.scss';
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+.square {
+    width: 100px;
+    height:100px;
+    background-color: blue;
+}
+
+
+
+
+@include mui-series {
+    .title     { @include mui-queue(2s, 0s, spin($direction:in)); }
+    .square     { @include mui-queue(2s, 2s, spin($direction:out)); }
+}
+
+
+.combine {
+    @include mui-animation(fade, slide/*($direction: up)*/, spin);
+    animation-duration: 2s;
+    }
